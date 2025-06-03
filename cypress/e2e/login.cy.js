@@ -1,7 +1,7 @@
 // cypress/e2e/login.cy.js
 describe('Fluxo de Login', () => {
   beforeEach(() => {
-    cy.visit('apresentacao-qa/index.html')
+    cy.visit('http://127.0.0.1:8080/index.html')
   })
 
   it('Deve exibir credenciais de teste quando clicado', () => {

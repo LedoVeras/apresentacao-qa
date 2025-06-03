@@ -5,19 +5,7 @@ const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esb
 
 module.exports = defineConfig({
   e2e: {
-    async setupNodeEvents(on, config) {
-      await addCucumberPreprocessorPlugin(on, config);
-
-      on(
-        "file:preprocessor",
-        createBundler({
-          plugins: [createEsbuildPlugin(config)],
-        })
-      );
-
-      return config;
-    },
-    specPattern: "cypress/e2e/**/*.feature",
-    baseUrl: "http://localhost:5500", // ou troque pela URL/porta do seu Live Server
+    //specPattern: "cypress/e2e/**/*.feature",
+    baseUrl: "http://127.0.0.1:8080", // ou troque pela URL/porta do seu Live Server
   },
 });

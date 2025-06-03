@@ -2,7 +2,7 @@
 describe('Fluxo de Recuperação de Senha', () => {
   context('Página Esqueci Minha Senha', () => {
     beforeEach(() => {
-      cy.visit('apresentacao-qa/esqueceu-senha.html')
+      cy.visit('http://127.0.0.1:8080/esqueceu-senha.html')
     })
 
     it('Deve exibir mensagem de erro para e-mail não cadastrado', () => {
@@ -44,7 +44,7 @@ describe('Fluxo de Recuperação de Senha', () => {
 
   context('Página Redefinir Senha', () => {
     beforeEach(() => {
-      cy.visit('apresentacao-qa/redefinir-senha.html')
+      cy.visit('redefinir-senha.html')
     })
 
     it('Deve validar força da senha', () => {
@@ -85,7 +85,7 @@ describe('Fluxo de Recuperação de Senha', () => {
   context('Fluxo Completo', () => {
     it('Deve completar todo o ciclo de recuperação', () => {
       // 1. Inicia na página de login
-      cy.visit('apresentacao-qa/index.html')
+      cy.visit('index.html')
       cy.contains('Esqueci minha senha').click()
       
       // 2. Preenche e-mail de recuperação
