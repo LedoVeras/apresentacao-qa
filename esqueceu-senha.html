@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recuperar Senha</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .info-box {
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: #856404;
+    }
+  </style>
+</head>
+<body class="forgot-password">
+  <div class="container">
+    <h2>Recuperar Senha</h2>
+
+    <div class="info-box">
+      <strong>Instruções para teste:</strong><br />
+      • Use o e-mail <code>usuario@email.com</code> para simular um envio bem-sucedido.<br />
+      • Qualquer outro e-mail exibirá a mensagem de erro: <em>"E-mail não encontrado em nossa base de dados."</em><br />
+      • Ao sucesso, um link fictício de redefinição será exibido abaixo.
+    </div>
+
+    <form id="recoveryForm">
+      <input type="email" id="email" placeholder="Digite seu e-mail" required />
+      <button type="submit">Enviar link de recuperação</button>
+    </form>
+
+    <p id="recoveryMessage" style="margin-top: 1rem; display: none;"></p>
+
+    <!-- Link provisório simula o "e-mail recebido" -->
+    <p id="fakeLink" style="display: none; margin-top: 1rem;">
+      <a href="redefinir-senha.html">Clique aqui para redefinir sua senha</a>
+    </p>
+
+    <p><a href="index.html">Voltar ao login</a></p>
+  </div>
+
+  <script src="js/scripts.js"></script>
+</body>
+</html>

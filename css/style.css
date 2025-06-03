@@ -1,0 +1,383 @@
+/* Reset e configurações gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animação do gradiente de fundo */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Página Index - Tons de Azul */
+body {
+  background: linear-gradient(-45deg, #667eea, #764ba2, #89f7fe, #66a6ff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Backdrop blur effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+/* Container principal */
+.container {
+  background: rgba(134, 134, 134, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1px;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão */
+button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Links */
+a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Parágrafos */
+p {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Info boxes (já existentes no HTML) */
+.info-box {
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .container {
+    margin: 1rem;
+    padding: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* === ESTILOS ESPECÍFICOS POR PÁGINA === */
+
+/* Página Esqueceu Senha - Tons de Vermelho */
+.page-forgot body {
+  background: linear-gradient(-45deg, #ff6b6b, #ee5a52, #ff8a80, #ffab91);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Página Redefinir Senha - Tons de Verde */
+.page-reset body {
+  background: linear-gradient(-45deg, #56ab2f, #a8e6cf, #4ecdc4, #44a08d);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Classes auxiliares para aplicar nos body das páginas específicas */
+.forgot-password {
+  background: linear-gradient(-45deg, #ff6b6b, #ee5a52, #ff8a80, #ffab91) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 15s ease infinite !important;
+}
+
+.reset-password {
+  background: linear-gradient(-45deg, #56ab2f, #a8e6cf, #4ecdc4, #44a08d) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 15s ease infinite !important;
+}
+
+/* Efeitos de partículas decorativas */
+.container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 20px;
+  z-index: -1;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mensagens de status */
+#recoveryMessage,
+#resetMessage {
+  padding: 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Link falso especial */
+#fakeLink {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+#fakeLink a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#fakeLink a:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+  transform: translateY(-1px);
+}
+
+/* === ANIMAÇÕES DE LOGIN E BOAS-VINDAS === */
+
+/* Overlay da animação de boas-vindas */
+.welcome-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Mensagem de boas-vindas */
+.welcome-message {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 3rem 4rem;
+  text-align: center;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-100vh) rotate(0deg) scale(0.1);
+}
+
+.welcome-message h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.welcome-message p {
+  font-size: 1.5rem;
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Animações da sequência de boas-vindas */
+@keyframes welcomeEntry {
+  0% {
+    transform: translateY(-100vh) rotate(0deg) scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0) rotate(720deg) scale(1.2);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(0) rotate(720deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(720deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomAndFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+@keyframes blackScreen {
+  0% {
+    background: transparent;
+  }
+  100% {
+    background: #000;
+  }
+}
+
+/* Animação de erro no login */
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Estilos para mensagem de erro */
+.login-error {
+  background: rgba(255, 82, 82, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 82, 82, 0.4);
+  color: #ff5252;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+  animation: errorShake 0.5s ease-in-out;
+}
+
+/* Responsividade para animações */
+@media (max-width: 480px) {
+  .welcome-message {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .welcome-message h1 {
+    font-size: 2rem;
+  }
+  
+  .welcome-message p {
+    font-size: 1.2rem;
+  }
+}
