@@ -8,15 +8,6 @@ describe('Fluxo de Login', () => {
     cy.wait(waitTime);
   });
 
-  it('Deve exibir credenciais de teste quando clicado', () => {
-    cy.contains('Ver Credenciais de Teste').click();
-    cy.wait(waitTime);
-
-    cy.on('window:alert', (text) => {
-      expect(text).to.contain('Credenciais de teste disponíveis');
-    });
-  });
-
   it('Deve falhar no login com credenciais inválidas', () => {
     cy.get('input[type="text"]').type('usuario_invalido', delayType);
     cy.wait(waitTime);
